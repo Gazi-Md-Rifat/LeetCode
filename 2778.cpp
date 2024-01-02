@@ -1,12 +1,14 @@
 class Solution {
 public:
-    int sumOfSquares(vector<int>& nums) {
-        int sum = 0;
-        for (int i = 1; i <= nums.size(); i++){
-            if (nums.size() % i == 0){
-                sum = sum + pow(nums[i - 1], 2);
+    int countSeniors(vector<string>& details) {
+        int count = 0;
+        for (int i = 0; i < details.size(); i++){
+            string data = details[i];
+            int age = stoi(data.substr(12, 14));
+            if (age > 60){
+                count++;
             }
         }
-        return sum;
+        return count;
     }
 };
